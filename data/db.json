@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nombre": "Admin",
+      "email": "admin@restorapp.com",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "nombre": "Tommy-Randy",
+      "email": "higuitajuan06@gmail.com",
+      "password": "1033183152",
+      "role": "user"
+    },
+    {
+      "id": "b8b0",
+      "nombre": "pepito.pe",
+      "email": "Pepitoperito@gmail.com",
+      "password": "123456789",
+      "role": "user"
+    }
+  ],
+  "producto": [
+    {
+      "id": 1,
+      "name": "Hamburguesa",
+      "price": 8.99,
+      "category": "burgers",
+      "descripcion": "Premium beef patty with cheddar cheese...",
+      "image": "./img/hamaburguesa.png"
+    },
+    {
+      "id": 2,
+      "name": "Papas fritas",
+      "price": 4.99,
+      "category": "sides",
+      "descripcion": "Premium beef patty with cheddar cheese...",
+      "image": "./img/papasfritas.png"
+    },
+    {
+      "id": 3,
+      "name": "Pizza",
+      "price": 10,
+      "category": "sides",
+      "descripcion": "Premium beef patty with cheddar cheese...",
+      "image": "./img/pizza.png"
+    }
+  ],
+  "pedido": [
+    {
+      "id": "660a",
+      "userId": "2",
+      "items": [
+        {
+          "productId": 1,
+          "nombre": "Hamburguesa",
+          "precio": 8.99,
+          "cantidad": 1
+        },
+        {
+          "productId": 2,
+          "nombre": "Papas fritas",
+          "precio": 4.99,
+          "cantidad": 1
+        }
+      ],
+      "subtotal": 13.98,
+      "tax": 1.12,
+      "total": 15.1,
+      "estado": "pendiente",
+      "fecha": "2026-02-02T06:25:35.224Z"
+    },
+    {
+      "id": "b399",
+      "userId": "2",
+      "items": [
+        {
+          "productId": 3,
+          "nombre": "Pizza",
+          "precio": 10,
+          "cantidad": 1
+        }
+      ],
+      "subtotal": 10,
+      "tax": 0.8,
+      "total": 10.8,
+      "estado": "pendiente",
+      "fecha": "2026-02-02T06:25:50.154Z"
+    },
+    {
+      "id": "fd12",
+      "userId": "b8b0",
+      "items": [
+        {
+          "productId": 1,
+          "nombre": "Hamburguesa",
+          "precio": 8.99,
+          "cantidad": 2
+        },
+        {
+          "productId": 2,
+          "nombre": "Papas fritas",
+          "precio": 4.99,
+          "cantidad": 4
+        }
+      ],
+      "subtotal": 37.94,
+      "tax": 3.04,
+      "total": 40.98,
+      "estado": "cancelado",
+      "fecha": "2026-02-02T06:56:58.352Z"
+    },
+    {
+      "id": "02e6",
+      "userId": "b8b0",
+      "items": [
+        {
+          "productId": 1,
+          "nombre": "Hamburguesa",
+          "precio": 8.99,
+          "cantidad": 1
+        },
+        {
+          "productId": 2,
+          "nombre": "Papas fritas",
+          "precio": 4.99,
+          "cantidad": 2
+        }
+      ],
+      "subtotal": 18.97,
+      "tax": 1.52,
+      "total": 20.49,
+      "estado": "cancelado",
+      "fecha": "2026-02-02T07:02:20.914Z",
+      "cancelledBy": {
+        "userId": "b8b0",
+        "email": "Pepitoperito@gmail.com",
+        "date": "2026-02-02T07:03:15.349Z"
+      }
+    }
+  ]
+}

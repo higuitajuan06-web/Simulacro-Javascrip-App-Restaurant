@@ -1,0 +1,140 @@
+/* =========================
+   VARIABLES (opcional pero PRO)
+   ========================= */
+:root {
+  --primary-green: #22c55e;
+  --bg-light: #f8fafc;
+  --text-muted: #6b7280;
+}
+
+/* =========================
+   GENERAL
+   ========================= */
+
+body {
+  background-color: var(--bg-light);
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.nav-link {
+  color: #111827;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: var(--primary-green) !important;
+  border-bottom: 2px solid var(--primary-green);
+}
+
+/* =========================
+   FILTER BUTTONS
+   ========================= */
+
+.btn-outline-secondary {
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.btn-dark {
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+/* =========================
+   PRODUCT CARD
+   ========================= */
+
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/* =========================
+   ADD TO CART BUTTON
+   ========================= */
+
+.card-footer button {
+  border-radius: 10px;
+  background-color: #f1f5f9;
+  font-weight: 500;
+}
+
+.card-footer button:hover {
+  background-color: var(--primary-green);
+  color: #fff;
+}
+
+/* =========================
+   CART (ASIDE)
+   ========================= */
+
+aside .card {
+  position: sticky;
+  top: 20px;
+}
+
+aside h5 {
+  font-weight: 600;
+}
+
+aside p {
+  font-size: 0.9rem;
+}
+
+aside .btn-success {
+  background-color: var(--primary-green);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+aside .btn-success:hover {
+  background-color: #16a34a;
+}
+
+/* Esto asegura que en móviles el menú desplegado se vea ordenado */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+  
+  /* Efecto al pasar el mouse o tocar en el móvil */
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+}

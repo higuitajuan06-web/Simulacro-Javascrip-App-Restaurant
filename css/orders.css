@@ -1,0 +1,210 @@
+/* =========================
+   VARIABLES GLOBALES
+   ========================= */
+:root {
+  --bg-page: #f7f7f7;
+  --card-bg: #ffffff;
+  --primary: #ff6b00;
+
+  --text-main: #1f1f1f;
+  --text-muted: #8a8a8a;
+
+  /* Estados (UX driven by admin) */
+  --pending-bg: #fff3cd;
+  --pending-text: #856404;
+
+  --preparing-bg: #e7f1ff;
+  --preparing-text: #0d6efd;
+
+  --delivered-bg: #d1e7dd;
+  --delivered-text: #0f5132;
+
+  --cancelled-bg: #f8d7da;
+  --cancelled-text: #842029;
+}
+
+/* =========================
+   BASE
+   ========================= */
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+}
+
+/* =========================
+   ORDERS LIST
+   ========================= */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   ORDER CARD
+   ========================= */
+.order-card {
+  background-color: var(--card-bg);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.order-id {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.order-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   STATUS BADGE
+   ========================= */
+.order-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: capitalize;
+}
+
+/* Estados visuales (NO lógica aquí) */
+.status-pendiente {
+  background-color: var(--pending-bg);
+  color: var(--pending-text);
+}
+
+.status-preparando {
+  background-color: var(--preparing-bg);
+  color: var(--preparing-text);
+}
+
+.status-entregado {
+  background-color: var(--delivered-bg);
+  color: var(--delivered-text);
+}
+
+.status-cancelado {
+  background-color: var(--cancelled-bg);
+  color: var(--cancelled-text);
+}
+
+/* =========================
+   CONTEXT TEXT
+   ========================= */
+.order-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.order-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-total {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* =========================
+   ACTIONS (FUTURO)
+   ========================= */
+.order-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-cancel {
+  background: none;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.item-interactivo {
+  cursor: pointer;
+  transition: all 0.3s ease; /* Hace que todo cambie suavemente */
+  border-left: 4px solid transparent; /* Preparamos un borde invisible */
+}
+
+.item-interactivo:hover {
+  background-color: rgba(25, 135, 84, 0.05); /* Fondo verde éxito muy sutil */
+  color: #198754; /* Texto en color success */
+  padding-left: 1.5rem !important; /* El efecto de "movimiento" hacia la derecha */
+  border-left: 4px solid #198754; /* Aparece una barrita verde al lado */
+}
+
+/* Animación para el icono por separado */
+.item-interactivo:hover i {
+  transform: scale(1.2) rotate(5deg); /* El icono se agranda y gira un poquito */
+  color: #198754;
+  transition: transform 0.3s ease;
+}
+.item-interactivo:active {
+  background-color: rgba(25, 135, 84, 0.2);
+  transform: scale(0.98); /* Se hunde un poquito al presionar */
+}
+
+@media (max-width: 991px) {
+  /* Le damos un color de fondo distinto al desplegable para que NO se camufle */
+  .navbar-collapse.show {
+    display: block !important;
+    background-color: #f8f9fa !important; /* Un gris muy claro para diferenciarlo del blanco */
+    border: 1px solid #198754; /* Borde verde para que se vea el límite */
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  /* Forzamos que los links se vean oscuros para que no se pierdan */
+  .nav-link {
+    color: #333 !important;
+    padding: 10px !important;
+  }
+}
+
+/* El efecto Hover Verde que pediste */
+.nav-link:hover {
+  color: #198754 !important;
+  background-color: rgba(25, 135, 84, 0.1); /* Fondo verde clarito al pasar el cursor */
+  border-radius: 5px;
+}
+

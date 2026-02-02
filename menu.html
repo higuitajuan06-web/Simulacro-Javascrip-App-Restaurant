@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Menu-RestorApp</title>
+    <link rel="stylesheet" href="./css/menu.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">
+      RestorApp <i class="bi bi-fork-knife"></i>
+    </a>
+
+    <button id="btnHam" class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="perfil-orden.html">My Orders</a></li>
+      </ul>
+    </div>
+  </div>
+    </nav>
+
+  <!-- MAIN -->
+  <main class="container py-4">
+    <div class="row">
+      
+      <!-- MENU / PRODUCTS -->
+      <section class="col-lg-8">
+        <h1 class="mb-4">Our Menu</h1>
+
+        <!-- FILTERS -->
+        <div class="d-flex gap-2 mb-4">
+          <button class="btn btn-dark">All</button>
+          <button class="btn btn-outline-secondary">Burgers</button>
+          <button class="btn btn-outline-secondary">Sides</button>
+          <button class="btn btn-outline-secondary">Drinks</button>
+        </div>
+
+        <!-- SEARCH -->
+        <input
+          type="text"
+          class="form-control mb-4"
+          placeholder="Search food..."
+        />
+
+        <!-- PRODUCTS GRID -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="productsContainer">
+          
+          <!-- CARD PRODUCT -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="./img/hamaburguesa.png" class="card-img-top" alt="Burger">
+
+              <div class="card-body">
+                <span class="badge bg-dark mb-2">BURGERS</span>
+
+                <h5 class="card-title">Classic Beef Burger</h5>
+                <p class="text-success fw-bold">$8.99</p>
+
+                <p class="card-text small text-muted">
+                  Premium beef patty with cheddar cheese...
+                </p>
+              </div>
+
+              <div class="card-footer bg-transparent border-0">
+                <button class="btn btn-light w-100">
+                  🛒 Add to order
+                </button>
+              </div>
+            </div>
+          </div>
+          
+
+        </div>
+      </section>
+
+      <!-- CART -->
+      <aside class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5>Your Order</h5>
+
+            <!-- items -->
+            <div id="cartItems"></div>
+
+            <hr>
+
+            <p class="d-flex justify-content-between">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+            </p>
+
+            <p class="d-flex justify-content-between">
+            <span>Tax (8%)</span>
+            <span id="tax">$0.00</span>
+            </p>
+
+            <h5 class="d-flex justify-content-between">
+            <span>Total</span>
+            <span class="text-success" id="total">$0.00</span>
+            </h5>
+
+
+            <button class="btn btn-success w-100 mt-3" id="confirmOrder">
+              Confirm Order
+            </button>
+          </div>
+        </div>
+      </aside>
+      
+    </div>
+</main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./js/user-guard.js"></script>
+    <script src="js/menu.js"></script>
+
+</body>
+
+</html>
