@@ -1,15 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>RestorApp Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/dashorad.css" />
 </head>
 <body>
-    dashord
 
-    <script src="js/admin-guard.js"></script>
-    <script src="./js/guard.js"></script>
-    <script src="js/admin.js"></script>
+  <!-- ================= NAVBAR ================= -->
+  <header class="admin-navbar">
+    <div class="navbar-left">
+      <div class="logo">RestorApp Admin</div>
+      <nav class="nav-links">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Menu</a>
+        <a href="#">Users</a>
+      </nav>
+    </div>
+
+    <div class="navbar-right">
+      <div class="user-avatar" id="adminAvatar"></div>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="dashboard-container">
+
+    <!-- ===== METRICS ===== -->
+    <section class="metrics">
+      <div class="metric-card" id="totalOrdersCard">
+        <span class="metric-title">Total Orders</span>
+        <span class="metric-value">0</span>
+      </div>
+
+      <div class="metric-card" id="pendingOrdersCard">
+        <span class="metric-title">Pending Orders</span>
+        <span class="metric-value">0</span>
+      </div>
+
+      <div class="metric-card" id="todayRevenueCard">
+        <span class="metric-title">Today's Revenue</span>
+        <span class="metric-value">$0.00</span>
+      </div>
+    </section>
+
+    <!-- ===== CONTENT ===== -->
+    <section class="orders-layout">
+
+      <!-- ===== ORDERS LIST ===== -->
+      <section class="orders-list">
+        <div class="orders-header">
+          <h2>Recent Orders</h2>
+          <div class="orders-actions">
+            <button id="filterBtn">Filter</button>
+            <button id="exportBtn">Export</button>
+          </div>
+        </div>
+
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <!-- JS render -->
+          </tbody>
+        </table>
+
+        <div class="pagination">
+          <button>&lt;</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>&gt;</button>
+        </div>
+      </section>
+
+      <!-- ===== ORDER DETAIL ===== -->
+      <aside class="order-detail" id="orderDetail">
+        <div class="order-detail-header">
+          <h3>Order Details</h3>
+          <span class="order-status" id="orderStatusBadge">-</span>
+        </div>
+
+        <div class="order-info">
+          <p><strong>Order:</strong> <span id="orderId">-</span></p>
+        </div>
+
+        <div class="customer-info">
+          <h4>Customer</h4>
+          <p id="customerName">-</p>
+          <p id="customerEmail">-</p>
+        </div>
+
+        <div class="order-items">
+          <h4>Items</h4>
+          <ul id="orderItemsList">
+            <!-- JS render -->
+          </ul>
+        </div>
+
+        <div class="order-summary">
+          <p>Subtotal: <span id="orderSubtotal">$0.00</span></p>
+          <p>Tax: <span id="orderTax">$0.00</span></p>
+          <p class="total">Total: <span id="orderTotal">$0.00</span></p>
+        </div>
+
+        <div class="order-actions">
+          <select id="orderStatusSelect">
+            <option value="pending">Pending</option>
+            <option value="preparing">Preparing</option>
+            <option value="ready">Ready</option>
+            <option value="delivered">Delivered</option>
+          </select>
+
+          <button id="updateStatusBtn">Update</button>
+          <button id="cancelOrderBtn" class="danger">Cancel Order</button>
+        </div>
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/admin-guard.js"></script>
+  <script src="./js/guard.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="./js/dashoard.js"></script>
 </body>
 </html>
+

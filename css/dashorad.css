@@ -1,0 +1,273 @@
+/* ===================================================
+   ADMIN DASHBOARD – RESTORAPP
+   Basado en Figma oficial
+   Escalable / mantenible
+=================================================== */
+
+:root {
+  --green: #22c55e;
+  --green-soft: #ecfdf3;
+  --yellow: #facc15;
+  --blue: #3b82f6;
+  --gray-100: #f9fafb;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+  --white: #ffffff;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+body.admin-dashboard {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--gray-100);
+  color: var(--gray-800);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.admin-navbar {
+  height: 64px;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.admin-navbar .logo {
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-navbar .nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.admin-navbar .nav-links a {
+  text-decoration: none;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.admin-navbar .nav-links a.active {
+  color: var(--green);
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 4px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.dashboard-container {
+  padding: 32px;
+}
+
+/* =========================
+   METRICS CARDS
+========================= */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.metric-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--gray-200);
+}
+
+.metric-card h4 {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-bottom: 8px;
+}
+
+.metric-card .metric-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* =========================
+   ORDERS TABLE
+========================= */
+
+.orders-section {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  padding: 16px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table thead th {
+  text-align: left;
+  font-size: 13px;
+  color: var(--gray-600);
+  padding: 12px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.orders-table tbody tr {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.orders-table tbody tr:hover {
+  background: var(--green-soft);
+}
+
+.orders-table td {
+  padding: 14px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.status.preparing {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.cancelled {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+/* =========================
+   ORDER DETAIL PANEL
+========================= */
+
+.order-detail {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  padding: 24px;
+}
+
+.order-detail h3 {
+  margin: 0 0 16px;
+}
+
+.order-detail .customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.order-detail .customer-info span {
+  display: block;
+  font-size: 14px;
+  color: var(--gray-600);
+}
+
+.order-items {
+  margin-bottom: 24px;
+}
+
+.order-items li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* =========================
+   TOTALS
+========================= */
+
+.order-totals {
+  border-top: 1px dashed var(--gray-200);
+  padding-top: 16px;
+}
+
+.order-totals div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.order-totals .total {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* =========================
+   UPDATE STATUS
+========================= */
+
+.update-status {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.update-status select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.update-status button {
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
